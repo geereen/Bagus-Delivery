@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>{{title}}</ion-title>
+    <ion-buttons end *ngIf="id_member">
+          <button royal (click)="goToCart()">
+            <ion-icon name="basket"></ion-icon>
+          </button>
+          <ion-span *ngIf="product.length" class="badge">{{product.length}}</ion-span>
+    </ion-buttons>
+
+    <ion-buttons end *ngIf="!id_member">
+          <button royal (click)="ShowToast()">
+            <ion-icon name="basket"></ion-icon>
+          </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="food">
+
+  <ion-list>
+   <ion-item *ngFor="let item of items">
+
+     <img src="http://localhost/Bagus/images/foods/{{item.cp_foodpic}}" alt="" width="100%"/>
+     <h2>{{item.food_name}}</h2>
+     <h4>ราคา : {{item.price}} บาท</h4>
+
+     <ion-buttons end *ngIf="id_member">
+           <button outline danger (click)="addToCart(item)">
+             <ion-icon name="basket"></ion-icon>
+           </button>
+     </ion-buttons>
+
+   </ion-item>
+ </ion-list>
+
+</ion-content>

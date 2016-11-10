@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>การสั่งซื้อของฉัน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h4 *ngIf="i" text-center>มี {{i}} รายการ</h4>
+  <h4 *ngIf="!i" class="txt" text-center>คุณยังไม่มีรายการสั่งซื้อ</h4>
+  <ion-list *ngIf="i">
+    <button ion-item *ngFor="let item of items" (click)="goToDetail(item)">
+      <ion-icon name="clipboard" item-left></ion-icon>
+      <center>{{item.order_date}}</center>
+    </button>
+  </ion-list>
+
+</ion-content>

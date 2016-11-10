@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>ข้อมูลส่วนตัว</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <img *ngIf="pic" class="circle" src="http://localhost/Bagus/images/members/{{pic}}" alt="" />
+      <button *ngIf="pic" fab white class="fabb" (click)="openMenu()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+
+    <img *ngIf="!pic" class="circle" src="img/profile.jpg" alt="" />
+      <button *ngIf="!pic" fab white class="fabb" (click)="openMenu()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+
+      <img *ngIf="imageSrc" [src]="imageSrc"/>
+      <center><button *ngIf="imageSrc" secondary (click)="Upload()">Upload</button></center>
+
+    <form [formGroup]="profileForm" *ngFor="let item of items" (submit)="Editprofile($event)">
+        <ion-item>
+          <ion-label floating>ชื่อ - สกุล</ion-label>
+          <ion-input formControlName="fullname" type="text" value="{{item.fullname_member}}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>อีเมล์</ion-label>
+          <ion-input formControlName="email" type="email" value="{{item.email}}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>เบอร์โทร</ion-label>
+          <ion-input formControlName="tel" type="text" value="{{item.tel_member}}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>ที่อยู่</ion-label>
+          <ion-input formControlName="address" type="text" value="{{item.address}}"></ion-input>
+        </ion-item>
+
+      <br><center><button danger class="buttons" type="submit" [disabled]="!profileForm.valid">บันทึก</button></center>
+    </form>
+  </ion-list>
+
+</ion-content>

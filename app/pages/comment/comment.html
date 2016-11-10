@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>ความคิดเห็น</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list *ngIf="items">
+   <ion-item *ngFor="let item of items">
+     <ion-avatar item-left>
+      <img *ngIf="item.pic_member" src="http://localhost/Bagus/images/members/{{item.pic_member}}">
+      <img *ngIf="!item.pic_member" src="img/profile.jpg">
+    </ion-avatar>
+       <h3 info>{{item.fullname_member}}</h3>
+       <h4>{{item.detail}}</h4>
+       <p>{{item.date_comment}}</p>
+   </ion-item>
+
+   <form  [formGroup]="commentForm" (submit)="addcomment($event)">
+    <ion-item>
+      <ion-input type="text" placeholder="แสดงความคิดเห็น" formControlName="comment"></ion-input>
+      <button clear item-right type="submit" [disabled]="!commentForm.valid"><ion-icon name="send"></ion-icon></button>
+    </ion-item>
+   </form>
+ </ion-list>
+
+
+ <ion-footer *ngIf="!items">
+  <ion-toolbar white>
+   <form  [formGroup]="commentForm" (submit)="addcomment($event)">
+    <ion-item>
+      <ion-input type="text" placeholder="แสดงความคิดเห็น" formControlName="comment"></ion-input>
+      <button clear item-right type="submit" [disabled]="!commentForm.valid"><ion-icon name="send"></ion-icon></button>
+    </ion-item>
+   </form>
+  </ion-toolbar>
+ </ion-footer>
+
+</ion-content>

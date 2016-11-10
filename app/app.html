@@ -1,0 +1,56 @@
+<ion-menu [content]="content">
+
+  <ion-toolbar>
+    <br><center>
+    <img src="img/logo.png" alt="" width="120"/>
+    <ion-title></ion-title>
+    </center><br>
+  </ion-toolbar>
+
+  <ion-content>
+
+    <ion-list>
+
+      <button menuClose ion-item *ngIf="namelocal" (click)="goToProfile()">
+        <ion-icon item-left name="contact"></ion-icon>
+         {{namelocal}}
+      </button>
+
+      <button menuClose ion-item *ngIf="!namelocal" (click)="login()">
+       <ion-icon name="log-in" item-left></ion-icon>
+        เข้าสู่ระบบ
+      </button>
+
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-left></ion-icon>
+         {{p.title}}
+      </button>
+
+      <button menuClose ion-item *ngIf="namelocal" (click)="goToHistory()">
+        <ion-icon name="copy" item-left></ion-icon>
+         ประวัติการสั่งซื้อ
+      </button>
+
+      <button menuClose ion-item *ngIf="namelocal" (click)="goToComment()">
+        <ion-icon name="text" item-left></ion-icon>
+         ความคิดเห็น
+      </button>
+
+      <button menuClose ion-item (click)="goToAbout()">
+       <ion-icon name="at" item-left></ion-icon>
+        เกี่ยวกับ
+      </button>
+
+      <button menuClose ion-item *ngIf="namelocal" (click)="logout()">
+       <ion-icon name="log-out" item-left></ion-icon>
+        ออกจากระบบ
+      </button>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

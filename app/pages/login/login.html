@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>เข้าสู่ระบบ</ion-title>
+    <ion-buttons end>
+          <button royal (click)="goToRegis()">
+            <ion-icon ios="ios-person-add-outline" md="md-person-add"></ion-icon>
+          </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="login">
+
+  <form  [formGroup]="loginForm" (submit)="checklogin($event)">
+    <ion-list>
+
+      <br><center>
+      <img src="img/logo.png" alt="" width="125"/>
+      </center><br>
+
+      <ion-item>
+        <ion-input type="text" placeholder="บัญชีผู้ใช้" formControlName="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" placeholder="รหัสผ่าน" formControlName="password"></ion-input>
+      </ion-item>
+
+      <br><center><button light round type="submit" [disabled]="!loginForm.valid">ลงชื่อเข้าใช้</button></center>
+
+    </ion-list>
+  </form>
+
+  <center><button clear (click)="goToRegis()">สมัครสมาชิก</button></center>
+  <!-- <button clear>ลืมรหัสผ่าน</button>| -->
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>เมนู</ion-title>
+    <ion-buttons end *ngIf="id_member">
+          <button royal (click)="popupNotify($event)">
+            <ion-icon name="notifications"></ion-icon>
+          </button>
+          <ion-span *ngIf="num" class="badge">{{num}}</ion-span>
+    </ion-buttons>
+
+    <ion-buttons end *ngIf="!id_member">
+          <button royal>
+            <ion-icon name="notifications"></ion-icon>
+          </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="main">
+
+  <ion-list>
+    <ion-item>
+      <img src="img/menu/chicken.jpg" alt="" width="100%" height="5%" (click)="goToChicken()"/>
+    </ion-item>
+
+    <ion-item>
+      <img src="img/menu/berger.jpg" alt="" width="100%" height="5%" (click)="goToBerger()"/>
+    </ion-item>
+
+    <ion-item>
+      <img src="img/menu/salad.jpg" alt="" width="100%" height="5%" (click)="goToSalad()"/>
+    </ion-item>
+
+    <ion-item>
+      <img src="img/menu/spagetthi.jpg" alt="" width="100%" height="5%" (click)="goToSpagetthi()"/>
+    </ion-item>
+</ion-list>
+
+</ion-content>

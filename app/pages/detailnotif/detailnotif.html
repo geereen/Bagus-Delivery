@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+ <div *ngIf="notify_type == 1">
+  <ion-list>
+    <center><img src="img/delivery.png" alt="" width="50%" height="50%"/></center>
+    <h2 text-center><strong>ขณะนี้</strong></h2>
+    <h3 text-center>{{notify_txt}}</h3>
+    <br><br>
+    <center>
+      <button block danger class="buttons" (click)="goToMain()">
+        <ion-icon name="home"></ion-icon> กลับหน้าหลัก
+      </button>
+    </center>
+  </ion-list>
+ </div>
+
+<div *ngIf="notify_type == 2">
+  <ion-list>
+    <form *ngFor="let item of items">
+      <center>
+        <img  class="circle" src="http://localhost/Bagus/images/deliveryman/{{item.cp_picstaff}}" alt=""/>
+      </center>
+
+      <ion-item>
+        <ion-label floating>ชื่อ - สกุล</ion-label>
+        <ion-input type="text" value="{{item.fullname_staff}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>เพศ</ion-label>
+        <ion-input type="text" value="{{item.sex}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>อายุ</ion-label>
+        <ion-input type="text" value="{{item.age}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>เบอร์โทร</ion-label>
+        <ion-input type="text" value="{{item.tel_staff}}" disabled></ion-input>
+      </ion-item>
+    </form>
+    <br><br>
+    <center>
+      <button block danger class="buttons" (click)="goToMain()">
+        <ion-icon name="home"></ion-icon> กลับหน้าหลัก
+      </button>
+    </center>
+  </ion-list>
+ </div>
+
+</ion-content>

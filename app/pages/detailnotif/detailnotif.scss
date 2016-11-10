@@ -1,0 +1,18 @@
+.detailnotif {
+
+}
+
+.circle {    // ชื่อคลาส
+  margin-top: 20px;
+  height: 150px;  // ปรับความสูง
+  width: 150px;  // ปรับความกว้าง
+  border: 3px solid #fff; // เส้นขอบขนาด 3px solid: เส้น #fff:โค้ดสีขาว
+  border-radius: 50%;  // ปรับเป็น 50% คือความโค้งของเส้นขอบ
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); // เงาของรูป
+  margin-left: 20px;
+}
+
+.buttons {
+  height: 40px;
+  width: 250px;
+}

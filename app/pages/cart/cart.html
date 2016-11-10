@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>ตะกร้าของฉัน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+  <ion-item-sliding *ngFor="let item of cart; let i = index">
+    <ion-item>
+    <center>
+    <ion-grid>
+
+      <ion-row>
+        <ion-col width-55>
+          <h5>{{item.name}}</h5><br>
+        </ion-col>
+
+        <ion-col width-10></ion-col>
+
+        <ion-col width-35>
+          <h5>ราคา: {{item.price*qty[i]}} ฿</h5><br>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-100>
+          <button clear dark>
+            <button clear gray (click)="minus(i)">
+              <ion-icon name="remove-circle"></ion-icon>
+            </button>
+            <ion-item>
+              <ion-input text-center type="number" min="1" [value]="qty[i]" [(ngModel)]="qty[i]"></ion-input>
+            </ion-item>
+            <button clear gray (click)="plus(i)">
+              <ion-icon name="add-circle"></ion-icon>
+            </button>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+    </center>
+    </ion-item>
+
+      <ion-item-options>
+        <button danger (click)="removeItem(item)"><ion-icon name="trash"></ion-icon>Delete</button>
+      </ion-item-options>
+
+  </ion-item-sliding>
+ </ion-list>
+
+<h3 *ngIf="cart" text-right>ราคารวม : {{sum}}</h3>
+
+<h3 class="txt" *ngIf="!cart" text-center>ตะกร้าว่าง</h3>
+<button full danger *ngIf="cart" (click)="CheckOut($event)">สั่งซื้อ</button>
+
+</ion-content>

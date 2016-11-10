@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<h3 text-center>รายการที่สั่ง</h3><br>
+<h5 text-left>สั่งเมื่อ: {{title}}</h5>
+<h5 text-left>เวลา: {{time}}</h5>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>รายการ</th>
+        <th>จำนวน</th>
+        <th>ราคา</th>
+        <th>รวม</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let i = index" >
+        <td>{{i+1}}</td>
+        <td>{{item.food_name}}</td>
+        <td>{{item.amount}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.amount*item.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p text-right>รวมทั้งสิ้น : <strong>{{sum}} บาท</strong></p>
+  <p text-left>สถานะ : <strong secondary>{{txtstatus}}</strong></p>
+
+</ion-content>

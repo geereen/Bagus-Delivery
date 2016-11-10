@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>สมัครสมาชิก</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form  [formGroup]="regisForm" (submit)="addMember($event)">
+     <ion-list>
+       <h4>&nbsp;ข้อมูลส่วนตัว</h4>
+       <ion-item>
+         <ion-label floating>ชื่อ - สกุล</ion-label>
+         <ion-input formControlName="fullname" type="text"></ion-input>
+       </ion-item>
+
+       <ion-item>
+         <ion-label floating>อีเมล์</ion-label>
+         <ion-input formControlName="email" type="email"></ion-input>
+       </ion-item>
+
+       <ion-item>
+         <ion-label floating>เบอร์โทร</ion-label>
+         <ion-input formControlName="tel" type="text"></ion-input>
+       </ion-item>
+
+       <ion-item>
+         <ion-label floating>ที่อยู่</ion-label>
+         <ion-input formControlName="address" type="text"></ion-input>
+       </ion-item>
+
+       <h4>&nbsp;สร้างบัญชีผู้ใช้</h4>
+        <ion-item>
+          <ion-label floating>ชื่อบัญชีผู้ใช้</ion-label>
+          <ion-input formControlName="username" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>รหัสผ่าน</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <br>
+         <center><button light type="submit" [disabled]="!regisForm.valid">สมัครสมาชิก</button></center>  <!--[disabled]="!regisForm.valid" -->
+    </ion-list>
+  </form>
+
+</ion-content>
