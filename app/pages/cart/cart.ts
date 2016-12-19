@@ -73,9 +73,7 @@ export class CartPage {
 
     CheckOut(event){
       this.local.remove('basket');
-
       let data = [];
-
       for(let i = 0; i < this.cart.length; i++ ){
         data[i] = {
           id_food: parseInt(this.cart[i].id_food),
@@ -85,7 +83,6 @@ export class CartPage {
 
       //let jsonString = JSON.stringify(data);
       let body = "id="+this.id_member+ "&data="+JSON.stringify(data);
-
       this.checkout.save(body).then((response)=>{
         // สั่งให้ Alert
         let alert = this.alertCtrl.create({
@@ -95,18 +92,11 @@ export class CartPage {
         });
         alert.present(alert);
         this.navCtrl.setRoot(MainPage, {}, { animate: true, direction: 'forward' });
-
         }).catch((err)=>{
             console.log(err);
         });
         event.preventDefault();
-
-
-      for(let i = 0; i < data.length; i++){
-        console.log(data[i]);
-      } // for
       console.log(body);
-
     } // CheckOut
 
 }
