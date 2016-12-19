@@ -81,7 +81,6 @@ export class CartPage {
         }
       } // for
 
-      //let jsonString = JSON.stringify(data);
       let body = "id="+this.id_member+ "&data="+JSON.stringify(data);
       this.checkout.save(body).then((response)=>{
         // สั่งให้ Alert
