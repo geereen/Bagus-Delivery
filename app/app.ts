@@ -90,4 +90,6 @@ class MyApp {
 
 } // Main Class
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, [], {
+  prodMode: true //true คือ production mode
+});
