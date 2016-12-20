@@ -83,8 +83,4 @@
   <plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
   <plugin name="cordova-plugin-inappbrowser" spec="~1.5.0"/>
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
-  <!-- Default Icon and Splash -->
-<icon src="resources/icon.png" />
-<gap:splash src="resources/splash.png" />
-<access origin="*"/>
 </widget>
