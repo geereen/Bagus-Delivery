@@ -14,8 +14,8 @@ export class CommentPage {
   public idlocal: any;
   commentForm: ControlGroup;
   items: Array<{}>;
-  Mylinkget = 'http://localhost/Bagus/api/getdata/comment.php'; // ถ้าลงในมือถือจริงให้เปลี่ยน localhost เป็นหมายเลข IP เครื่อง Server
-  Mylinkput = 'http://localhost/Bagus/api/putdata/comment.php';
+  Mylinkget = 'http://192.168.0.101/Bagus/api/getdata/comment.php'; // ถ้าลงในมือถือจริงให้เปลี่ยน localhost เป็นหมายเลข IP เครื่อง Server
+  Mylinkput = 'http://192.168.0.101/Bagus/api/putdata/comment.php';
   // 192.168.139.250 IP PSU
   // 172.18.22.168 802.1 PSU
   data: any = null;

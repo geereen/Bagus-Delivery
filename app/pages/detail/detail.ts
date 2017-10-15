@@ -11,7 +11,7 @@ export class DetailPage {
   id: number;
   title: string;
   items: Array<{}>;
-  Mylink = 'http://localhost/Bagus/api/getdata/order_detail.php?id=';
+  Mylink = 'http://192.168.0.101/Bagus/api/getdata/order_detail.php?id=';
   sum: number;
   status: number;
   time: any;

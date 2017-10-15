@@ -10,7 +10,7 @@ import { DetailPage } from '../detail/detail';
 export class HistoryPage {
   id: number;
   items: Array<{}>;
-  Mylink = 'http://localhost/Bagus/api/getdata/order_history.php?id=';
+  Mylink = 'http://192.168.0.101/Bagus/api/getdata/order_history.php?id=';
   i: string;
 
   constructor(private navCtrl: NavController, private navParam: NavParams, private http: Http) {

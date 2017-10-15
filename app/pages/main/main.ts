@@ -14,7 +14,7 @@ import { NotifyPage } from '../notify/notify';
 export class MainPage {
   public local: Storage;
   public id_member: any;
-  Mylinkget = 'http://localhost/Bagus/api/getdata/notify.php?id=';  // 192.168.139.250
+  Mylinkget = 'http://192.168.0.101/Bagus/api/getdata/notify.php?id=';  // 192.168.139.250
   num: any;
   public basket: any[];
 

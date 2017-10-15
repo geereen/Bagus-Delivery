@@ -13,8 +13,8 @@ export class NotifyPage {
   id_member: any;
   num: any;
   items: Array<{}>;
-  Mylinkget = 'http://localhost/Bagus/api/getdata/notify.php?id=';  // 192.168.139.250
-  UpdateNoify = 'http://localhost/Bagus/api/putdata/notify.php?id=';
+  Mylinkget = 'http://192.168.0.101/Bagus/api/getdata/notify.php?id=';  // 192.168.139.250
+  UpdateNoify = 'http://192.168.0.101/Bagus/api/putdata/notify.php?id=';
 
   constructor(private navCtrl: NavController, private http: Http) {
     this.navCtrl = navCtrl;

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Profile {
   data: any = null;
-  Mylinkput = 'http://localhost/Bagus/api/putdata/profile.php?id='; // 192.168.139.250
+  Mylinkput = 'http://192.168.0.101/Bagus/api/putdata/profile.php?id='; // 192.168.139.250
 
   constructor(private http: Http) {}
 

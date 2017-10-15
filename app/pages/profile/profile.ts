@@ -18,8 +18,8 @@ export class ProfilePage {
   id: number;
   pic: string;
   items: Array<{}>;
-  Mylinkget = 'http://localhost/Bagus/api/getdata/profile.php?id='; // ถ้าลงในมือถือจริงให้เปลี่ยน localhost เป็นหมายเลข IP เครื่อง Server
-  Mylinkupload = 'http://localhost/Bagus/api/putdata/upload_pic.php?id=';
+  Mylinkget = 'http://192.168.0.101/Bagus/api/getdata/profile.php?id='; // ถ้าลงในมือถือจริงให้เปลี่ยน localhost เป็นหมายเลข IP เครื่อง Server
+  Mylinkupload = 'http://192.168.0.101/Bagus/api/putdata/upload_pic.php?id=';
   imageSrc: string;
 
   constructor(private navCtrl: NavController, private navParam: NavParams, private http: Http, private Formprofile: FormBuilder, private alertCtrl: AlertController, private profile: Profile,public actionSheetCtrl: ActionSheetController) {

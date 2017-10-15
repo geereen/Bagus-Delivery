@@ -1,6 +1,9 @@
 {
   "name": "Bagus Delivery",
   "app_id": "0bdbea9a",
-  "v2": true,
-  "typescript": true
+  "integrations": {
+    "gulp": {},
+    "cordova": {}
+  },
+  "type": "ionic-angular"
 }

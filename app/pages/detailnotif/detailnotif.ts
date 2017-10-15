@@ -10,7 +10,7 @@ import { MainPage } from '../main/main';
   templateUrl: 'build/pages/detailnotif/detailnotif.html',
 })
 export class DetailnotifPage {
-  Mylinkget = 'http://localhost/Bagus/api/getdata/staff.php?id=';
+  Mylinkget = 'http://192.168.0.101/Bagus/api/getdata/staff.php?id=';
   items: Array<{}>;
   id_staff: any;
   notify_txt: any;

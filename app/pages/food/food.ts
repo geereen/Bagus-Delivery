@@ -15,7 +15,7 @@ export class FoodPage {
   title: any;
   type: number;
   items: Array<{}>; //ประกาศตัวแปร array เปล่า
-  Mylinkget = 'http://localhost/Bagus/api/getdata/food.php?type=';  // 192.168.139.250
+  Mylinkget = 'http://192.168.0.101/Bagus/api/getdata/food.php?type=';  // 192.168.139.250
   public product: any[];
 
   constructor(private navCtrl: NavController, private http: Http, private navParam: NavParams, private toastCtrl: ToastController) {

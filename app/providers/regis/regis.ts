@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Regis {
 data: any = null;
-Mylink = 'http://localhost/Bagus/api/putdata/member.php'; // ถ้าลงในมือถือจริงให้เปลี่ยน localhost เป็นหมายเลข IP เครื่อง Server
+Mylink = 'http://192.168.0.101/Bagus/api/putdata/member.php'; // ถ้าลงในมือถือจริงให้เปลี่ยน localhost เป็นหมายเลข IP เครื่อง Server
 
   constructor(private http: Http) {} // constructor
 

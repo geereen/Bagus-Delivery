@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Checkout {
   data: any = null;
-  Mylink = 'http://localhost/Bagus/api/putdata/order.php';
+  Mylink = 'http://192.168.0.101/Bagus/api/putdata/order.php';
 
   constructor(private http: Http) {} // constructor
 
